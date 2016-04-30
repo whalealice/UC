@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<ul id="oUl">
+		<li class="active abc">1</li>
+		<li>2</li>
+		<li class="active">3</li>
+		<li>4</li>
+	</ul>
+	<ul id="oUl2">
+		<li class="active abc">1</li>
+		<li>2</li>
+		<li class="active">3</li>
+		<li>4</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	var oUl = document.querySelector('#oUl');
+	
+	//active == active abc
+	var aLi = getByClass('active',oUl);
+	var aLi = getByClass('active');
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].style.background = 'red';
+	}
+	//正则的方法
+	function getByClass(sClass,obj){
+		obj = obj || document;
+		var aEle = obj.getElementsByTagName('*');//找到父级下面所有的元素
+		var arr = [];
+		var re = new RegExp('\\b'+sClass+'\\b');
+
+		for(var i=0;i<aEle.length;i++){
+			if(re.test(aEle[i].className)){ 
+			//匹配成功返回true就把这个存进数组里
+				arr.push(aEle[i]);
+			}
+		}
+		return arr;
+	}
+	//字符串的方法
+	// function getByClass(sClass,obj){
+	// 	obj = obj || document;
+	// 	var aEle = obj.getElementsByTagName('*');
+	// 	var arr = [];
+	// 	for(var i=0;i<aEle.length;i++){
+	// 		var aClass = aEle[i].className.split(' ');
+	// 		for(var j=0;j<aClass.length;j++){
+	// 			if(aClass[j] == sClass){
+	// 				arr.push(aEle[i]);
+	// 			}
+	// 		}
+	// 	}
+	// 	return arr;
+	// }
+	
+	
+</script>
+</html>

@@ -1,0 +1,635 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input{
+	margin:0;padding:0;}
+body { font-size:12px;font-family: "微软雅黑";}
+img { border:none;}
+ul,ol,li { list-style:none; vertical-align:top;}
+input,select,textarea { outline:none;}/*火狐有边框*/
+textarea { resize:none;}
+a { text-decoration:none;color: #333;}
+
+
+
+/*清除浮动*/
+.clear:after { content:'' ;display:block; clear:both;}
+.clear{ zoom:1;}
+
+/*颜色通用*/
+.new_pic a:hover,
+.action a:hover,
+.foot a:hover{color:#ff6600;}
+
+/*头部logo*/
+#top{
+	width: 990px;
+	height: 70px;
+	margin:0 auto;
+}
+#logo{
+	float: left;
+	margin-top: 12px;
+	cursor: pointer;
+}
+#nav{
+	float: right;
+	z-index: 50;
+}
+#nav li{
+	float: left;
+	width: 60px;
+	height: 67px;
+	text-align: center;
+	margin-right: 30px;
+	font:20px/67px "Microsoft YaHei","黑体";
+	position: relative;
+	z-index: 50;
+}
+ #nav .indor{
+	width: 142px;
+	background: #fff;
+	opacity: 0.9;
+	filter:alpha(opacity=90%);
+	font-size: 14px;
+	position: absolute;
+	top:70px;
+	left: -40px;
+	z-index: 40;
+	padding: 10px 4px;
+	display: none;
+	overflow: hidden;
+}
+#nav .indor li{
+	width: 142px;
+	height: 40px;
+	font-size: 14px;
+	line-height: 40px;
+	cursor: pointer;
+}
+#nav .indor li:hover{
+	background: #f0eef1;
+	color:#ff6600;
+}
+#nav .active{
+	border-bottom: 3px solid #ff6600;
+}
+
+#nav li a:hover{
+	color: #ff6600;
+}
+
+/*头部bar*/
+.bar{
+	width:100%;
+	height: 390px;
+	position: relative;
+}
+.barBox li{
+	height: 390px;
+	width: 100%;
+	cursor: pointer;
+	position:absolute;
+	top: 0;
+	left: 0;
+}
+.barBox .bar1{
+	background: url(../image/bar/bar1.jpg) no-repeat center center;
+}
+.barBox .bar2{
+	background: url(../image/bar/bar2.jpg) no-repeat center center;
+}
+.barBox .bar3{
+	background: url(../image/bar/bar3.jpg) no-repeat center center;
+}
+.bar .dot{
+	width: 100%;
+	text-align: center;
+	height: 16px;
+	position: absolute;
+	bottom: 20px;
+	z-index: 20;
+}
+.bar .dot span{
+	width: 16px;
+	height: 16px;
+	margin: 0 8px;
+	overflow: hidden;
+	background: #fff;
+	display: inline-block;
+	border-radius: 50%;
+	cursor: pointer;
+	opacity: 0.8;
+	box-shadow: 2px 2px 2px  #999;
+}
+.bar .dot .active{
+	background: #ff6600;
+}
+/*下载图标*/
+.download{
+	height:145px;
+	border-bottom:1px solid #eee;
+}
+.download .plat{
+	position:relative;
+	width:990px;
+	height: 145px;
+	margin:0 auto;
+	z-index: 11;
+}
+.download .code{
+	width:128px;
+	height:160px;
+	text-align: center;
+	background: #fff;
+	font:12px/20px "Microsoft YaHei","宋体";
+	position:absolute;
+	right:0;
+	top:-32px;
+	z-index:2;
+}
+.plat li{
+	float: left;
+	width: 112px;
+	height: 135px;
+	text-align: center;
+	margin: 5px 13px 0;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	z-index: 2;
+}
+.plat li a{
+	color: #445;
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+.plat .pico{
+	margin: 0 auto;
+	padding-top: 10px;
+	height: 70px;
+	cursor: pointer;
+	text-align: center;
+	background:url(../image/ico.png) no-repeat;
+	transition: 200ms;
+	-webkit-transition:200ms;
+	-moz-transition:200ms;
+	-o-transition:200ms;
+	-ms-transition:200ms;
+}
+.plat-android .pico{
+	background:url(../image/ico.png) no-repeat 22px 14px;
+}
+.plat-iphone .pico{
+	background:url(../image/ico.png) no-repeat -121px 14px;
+}
+.plat-computer .pico{
+	background:url(../image/ico.png) no-repeat -265px 14px;
+}
+.plat-pad .pico{
+	background:url(../image/ico.png) no-repeat -957px 14px;
+	position: relative;
+	height: 70px;
+	overflow: hidden;
+	transition: 200ms;
+	-webkit-transition:200ms;
+	-moz-transition:200ms;
+	-o-transition:200ms;
+	-ms-transition:200ms;
+}
+.plat-tv .pico{
+	background:url(../image/ico.png) no-repeat -691px 14px;
+}
+.plat-wp .pico{
+	z-index: 20;
+	background:url(../image/ico.png) no-repeat -832px 14px; /*-105px  javascript*/
+}
+.plat-pad .pico .sBox{
+	position: relative;
+	top:80px;   /*javascript*/
+	z-index: 40;  
+	font-size: 13px;
+}
+.plat-pad .pico .a0,.plat-pad .pico .a1{
+	display: block;
+	width: 80px;
+	height: 24px;
+	line-height: 24px;
+	border: 1px solid #ff6600;
+	/*top:80px;  */
+	text-align: center;
+	/*position: relative;*/
+	-webkit-border-radius:3px;
+}
+.plat-pad .pico .a0{
+	margin: 0 auto;
+	transition: 200ms;
+	-webkit-transition:200ms;
+	-moz-transition:200ms;
+	-o-transition:200ms;
+	-ms-transition:200ms;
+}
+.plat-pad .pico .a1{
+	margin: 8px auto 5px;
+	position: relative;
+}
+.plat-pad .pico .a0:hover,.plat-pad .pico .a1:hover{
+	background: #ff6600;
+	color:#fff;
+}
+.plat .ptext{
+	padding-top: 3px;
+	text-align: center;
+	font-size: 12px;
+	display: block;
+	line-height: 22px;
+}
+.plat .down{
+	padding-top: 3px;
+	text-align: center;
+	font-size: 12px;
+	display: none ;  /*javascript*/
+}
+.plat .updata{
+	display: none;  /*javascript*/
+	padding-top: 8px;
+	font-size: 12px;
+	color: #999;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 10;
+}
+.plat .round{
+	*display: none;
+	width: 112px;
+	height: 112px;
+	background: url(../image/round.png) no-repeat;
+	position: absolute;
+	top: -2px;
+	left: 0;
+	transition: 200ms;
+	-webkit-transition:200ms;
+	-moz-transition:200ms;
+	-o-transition:200ms;
+	-ms-transition:200ms;
+
+	opacity: 0; /*javascript*/
+	filter:alpha(opacity=0);
+}
+.plat .ico-new{
+	width: 23px;
+	height: 11px;
+	overflow: hidden;
+	position: absolute;
+	top: 10px;
+	right: 18px;
+	z-index: 2;
+	background: url(../image/ico_new.gif)no-repeat;
+	display: none;
+}
+/*新闻列表*/
+.new{
+	width:1000px;
+	margin:20px auto 0;
+	height:410px;
+}
+	
+.action{
+	float:left;
+	width:300px;
+	color:#555;
+	height: 410px;
+}
+.action h2{
+	font-weight:normal;
+	font-size:20px;
+	height:62px;
+	line-height:62px;
+	position: relative;
+}
+.action h2 a{
+	display:inline-block;
+	font-size:14px;
+	position: absolute;right:0;top: 0;
+	color:#555;
+}
+.new_pic{
+	height: 156px;
+	width: 100%;
+	position:relative;
+	overflow: hidden;
+
+}
+.new_pic:hover{
+	box-shadow:0 4px 10px #bbbbbb;  /*阴影效果*/
+}
+.new_pic img{
+	width:100%;
+	height:156px;
+	z-index: 1;
+	transition:0.3s;  /*放大的动画效果*/
+}
+.new_pic img:hover{
+	transform:scale(1.2);
+	opacity: 0.8;
+}
+.new_pic h3{
+	width:100%;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	overflow: hidden;
+	font-size:14px;
+	text-align:center;
+	font-weight:normal;
+	position: absolute;
+	bottom: 10px;left: 0;
+	z-index:3;
+}
+.new_pic .new_bg{
+	height:36px;
+	width:100%;
+	background:#f2f2f2;
+	z-index: 2;
+	position: absolute;
+	bottom: 0;left: 0;
+}
+.action ul{
+	margin-top:8px;
+	font-size:14px;
+	color:#555;
+	line-height:28px;
+	cursor: pointer;
+}
+
+.new .space{margin:0 50px;}
+
+/*底部*/
+.fbg{
+	padding: 25px 0 40px;
+	font-size: 12px;
+	color: #666;
+	background: #333;
+}
+.foot{
+	background:#333333;
+	/*height:450px;*/
+	width:990px;
+	margin:0 auto;
+	color:#aaa;
+}
+.foot a{
+	color:#aaa;
+}
+.foot .sitemap{
+	float:left;
+	width:165px;
+	z-index: 40;
+}
+.foot .sitemap a{
+	font-family: "微软雅黑";
+}
+.foot .sitemap dt{
+	font-weight:bold;
+	color:#aaa;
+	display: block;
+	line-height: 20px;
+}
+.foot .sitemap dd{
+	display: block;
+	line-height:20px;
+}
+/*带icon图标的最后一列*/
+.foot .language{
+	height: 34px;
+	font-family: normal;
+	position: relative;
+}
+.foot .lan-cur{
+	line-height:16px;
+	height:16px;
+	width: 128px;
+	border:1px solid #434343;
+	padding: 3px 4px;
+	font-size: 14px;
+	cursor: pointer;
+	overflow: hidden;
+	background: url(../image/arrow.png)center right no-repeat;
+}
+.foot .lan-cur em{
+	float: left;
+	display: block;
+	width: 24px;
+	height: 16px;
+	background:  url(../image/ico.png) no-repeat -8px -254px;
+}
+
+.list-lan{ /*中文版移入出现的文字列表*/
+	display: none;   /*javascript*/
+	width: 130px;
+	padding:10px 0 ;
+	border-left: 1px solid #e0e0e0;
+	border-right: 1px solid #e0e0e0;
+	background: #fff;
+	opacity: 0.95;
+	filter:alpha(opacity=95%);
+	box-shadow: 0 0 2px #e0e0e0;
+	position:absolute;
+	left: 0;
+	bottom: 40px;
+	z-index: 10;
+}
+.list-lan a{
+	display: block;
+	padding:3px 5px 3px 12px;
+	color:#444455;
+}
+.list-lan a:hover{
+	background: #ebebeb;
+}
+.foot .other{
+	padding-left: 7px;
+	font-size: 14px;
+}
+.foot .other .list-site{
+	margin: 2px 0;
+	height: 24px;
+	line-height: 24px;
+	position: relative;
+	z-index: 11;
+
+}
+.other .list-site span{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url(../image/ico.png) no-repeat -9px -254px;
+	vertical-align: middle;
+}
+.other .list-site a{
+	display: block;
+}
+
+/*icon的不同定位*/	
+.list-site .ico-iphone span{
+	background-position: -10px -281px;
+}	
+.list-site .ico-ipad span{
+	background-position: -10px -376px;
+}	
+.list-site .ico-tv span{
+	background-position: -10px -409px;
+}	
+.list-site .ico-weibo span{
+	background-position: -8px -311px;
+}	
+.list-site .ico-baidu span{
+	background-position: -8px -342px;
+}	
+.list-site .ico-weixin span{
+	background-position: -10px -446px;
+}	
+
+.list-site .ico-iphone span:hover{
+	background-position: -50px -281px;
+}	
+.list-site .ico-ipad span:hover{
+	background-position: -50px -376px;
+}	
+.list-site .ico-tv span:hover{
+	background-position: -50px -409px;
+}	
+.list-site .ico-weibo span:hover{
+	background-position: -49px -311px;
+}	
+.list-site .ico-baidu span:hover{
+	background-position: -48px -342px;
+}	
+.list-site .ico-weixin span:hover{
+	background-position: -50px -446px;
+}	
+/*微信移入是显示的内容*/
+.foot .list-site a{
+	z-index: 200;
+}
+.ico-weixin{
+	overflow: hidden;
+}
+.code-weixin{
+	width: 340px;
+	/*height: 202px;*/
+	height: 0;
+	position: absolute;
+	bottom: 25px;
+	right: 45px;
+	z-index: 1;
+	box-shadow: 0 -1px 3px rgba(4,0,0,0.1) ;
+	overflow: hidden;
+}
+.code-weixin ul{
+	width: 340px;
+	height: 202px;
+	/*position: absolute;*/
+	/*top: 204px;    javascript  *//*到0即可 */
+	/*left: 0;*/
+	background: #fff;
+}
+.code-weixin li{
+	float: left;
+	margin: 16px 11px ;
+	width: 148px;
+	height: 170px;
+	text-align: center;
+	font-size: 13px;
+	color:#554; 
+	display: inline;
+}
+.code-weixin li img{
+	float:left;
+}
+/*foot链接*/		
+.gLink{
+	position:relative;
+	width:990px;
+	margin-top: 20px;
+	border-top:1px dotted #565656;
+	border-bottom:1px dotted #565656;
+	height: 34px;
+	overflow: hidden;
+}
+.foot .links{
+	color: #666;
+	padding: 9px 0 9px 10px;
+	line-height: 19px;
+	overflow: hidden;
+}
+/*下拉菜单显示的*/
+.foot .linksmore{
+	width: 940px;
+	margin-top: -5px;
+	padding: 0 0 8px 2px;
+	color: #666;
+	line-height: 20px;
+	display: no ne;/* javascript*/
+}
+.foot .links a,.foot .linksmore a{
+	display:inline-block;
+	margin:0 7px;
+	font-size:12px;
+}	
+.foot .links a:first-child {
+	margin-left: 0;
+}
+.foot .btn_link{
+	background:url(../image/ico.png) no-repeat -105px -248px; 
+	position:absolute; 
+	right:8px;
+	bottom:11px;
+	width: 16px;
+	height: 16px;
+	line-height: 0;
+	overflow: hidden;
+	cursor: pointer;
+}	
+.foot .flink{
+	border-top:none;
+	margin-bottom:20px;
+	border-bottom: 1px dotted #565656;
+	width: 990px;
+	position:relative;
+	height: 34px;
+	overflow: hidden;
+}	
+/*foot版权*/	
+.foot .copy{
+	line-height: 19px;
+}
+.foot .logo-company {
+	float: left;
+	margin-top: 22px;
+	width: 120px;
+	height: 36px;
+}
+.foot .fanva{
+	float: right;
+	text-align: right;
+}
+.foot .fanva a{
+	margin-right: 5px;
+}
+.foot .fanva p:nth-of-type(2){
+	margin-top: 6px;
+}
+.foot .copy-text{
+	padding-top: 6px;
+	float: left;
+	color:#565656;
+}
+.foot .copy-text a{
+	color:#565656;
+}
+.foot .copy-text a:hover{
+	color: #ff6600;
+}
